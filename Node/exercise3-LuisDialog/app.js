@@ -39,9 +39,9 @@ bot.recognizer(luisRecognizer);
 
 bot.dialog('Help',
     (session, args, next) => {
-        session.endDialog(`I'm the help desk bot and I can help you create a ticket.\n` +
+        session.send(`I'm the help desk bot and I can help you create a ticket.\n` +
             `You can tell me things like _I need to reset my password_ or _I cannot print_.`);
-        builder.Prompts.text(session, 'First, please briefly describe your problem to me.');
+        session.endDialog('First, please briefly describe your problem to me.');
     }
 ).triggerAction({
     matches: 'Help'
